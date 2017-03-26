@@ -1,0 +1,27 @@
+.Tile {
+  user-select: none;
+  font-size: 16pt;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin: 4px;
+  cursor: pointer;
+  text-align: center;
+  font-weight: bold;
+  width: 50px;
+  height: 50px;
+  background: #3498DB;
+}
+.Tile .flag {
+  /*color: #ECF0F1;*/
+}
+.Tile:hover {
+  outline: solid 4px #ECF0F1;
+}
+.Tile.revealed {
+  outline: none;
+  cursor: not-allowed;
+  background: #ECF0F1;
+  transition: background 200ms;
+}

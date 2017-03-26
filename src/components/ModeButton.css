@@ -1,0 +1,15 @@
+.ModeButton {
+  background: #ECF0F1;
+  color: inherit;  
+  padding: 10px 20px;
+  font-size: inherit;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+}
+.ModeButton:hover {
+  background: #3498DB;
+}
+.ModeButton.flagMode {
+  background: #E74C3C;
+}
