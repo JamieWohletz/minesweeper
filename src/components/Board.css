@@ -1,3 +1,4 @@
 .Board {
   border-collapse: collapse;
+  margin: -4px;
 }

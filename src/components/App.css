@@ -6,9 +6,3 @@
   align-items: center;
   text-align: center;
 }
-.App .ModeButton {
-  margin: 4px;
-}
-.App.flagMode .Board .Tile:hover {
-  outline-color: #E74C3C;
-}

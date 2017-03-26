@@ -1,0 +1,17 @@
+.Menu {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+}
+.Menu .button {
+  margin: 10px;
+}
+.Menu button.easy:hover {
+  background: #25E74E;
+}
+.Menu button.medium:hover {
+  background: #3498DB;
+}
+.Menu button.hard:hover {
+  background: #E74C3C;
+}

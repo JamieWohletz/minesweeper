@@ -1,0 +1,14 @@
+.Game {
+}
+.Game .wrapper {
+  padding: 10px;
+}
+.Game .MineCount {
+  margin-bottom: 10px;
+}
+.Game .FlagButton {
+  margin-top: 10px;
+}
+.Game.flagMode .Board .Tile:hover {
+  outline-color: #E74C3C;
+}

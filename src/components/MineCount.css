@@ -1,0 +1,7 @@
+.MineCount {
+  display: inline-block;
+  font-weight: bold;
+}
+.MineCount .count {
+  color: #E74C3C;
+}

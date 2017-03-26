@@ -1,41 +1,79 @@
 import React, { Component } from 'react';
-import Board from './Board';
-import ModeToggle from './ModeButton';
-import { generateBoard, revealTile, toggleTileFlag } from '../minesweeper';
+import Menu from './Menu';
+import Game from './Game';
 import './App.css';
 
 class App extends Component {
   constructor(props) {
-    super(props);
-    const board = generateBoard(10, 10, 5);
-    this.state = {
-      board,
-      flagMode: false
+    super(props)
+    this.state = this.getInitialState();
+  }
+  getInitialState() {
+    return {
+      gameStarted: false,
+      gameData: {
+        rows: 0,
+        columns: 0,
+        mineCount: 0
+      }
     };
   }
-  onTileClick(i, j) {
-    if (this.state.flagMode) {
-      toggleTileFlag(i, j, this.state.board);
-    } else {
-      revealTile(i, j, this.state.board);
-    }
+  menu() {
+    this.setState(this.getInitialState());
+  }
+  startEasyGame() {
     this.setState({
-      board: this.state.board
+      gameStarted: true,
+      gameData: {
+        rows: 10,
+        columns: 10,
+        mineCount: 10
+      }
     });
   }
-  onFlagButtonClick() {
+  startMediumGame() {
     this.setState({
-      board: this.state.board,
-      flagMode: !this.state.flagMode
+      gameStarted: true,
+      gameData: {
+        rows: 15,
+        columns: 15,
+        mineCount: 30
+      }
+    });
+  }
+  startHardGame() {
+    this.setState({
+      gameStarted: true,
+      gameData: {
+        rows: 23,
+        columns: 23,
+        mineCount: 92
+      }
     });
   }
   render() {
+    const {
+      gameStarted,
+      gameData: {
+        rows,
+        columns,
+        mineCount
+      }
+    } = this.state;
+    const menu = gameStarted ? '' : (
+      <Menu
+        onEasyClick={this.startEasyGame.bind(this)}
+        onMediumClick={this.startMediumGame.bind(this)}
+        onHardClick={this.startHardGame.bind(this)}
+      />
+    );
+    const game = !gameStarted ? '' : (
+      <Game rows={rows} columns={columns} mineCount={mineCount} showMenu={this.menu.bind(this)} />
+    );
     return (
-      <div className={`App ${this.state.flagMode ? 'flagMode' : ''}`}>
-        <div>
-        <Board board={this.state.board} onTileClick={this.onTileClick.bind(this)} />
-        <ModeToggle onToggle={this.onFlagButtonClick.bind(this)} flagMode={this.state.flagMode} />
-        </div>
+      <div className='App'>
+        {menu}
+        {game}
       </div>
     );
   }

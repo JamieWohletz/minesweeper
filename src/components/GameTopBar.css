@@ -1,0 +1,19 @@
+.GameTopBar {
+}
+.GameTopBar .button {
+  margin: 0 0 0 10px;
+}
+.GameTopBar .left-div, .GameTopBar .center-div, .GameTopBar .right-div {
+  display: inline-block;
+}
+.GameTopBar .left-div {
+  width: 40%;
+  text-align: left;
+}
+.GameTopBar .center-div {
+  width: 20%;
+  text-align: center;
+}
+.GameTopBar .right-div {
+  width: 40%;
+}
