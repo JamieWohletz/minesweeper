@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import './Game.css';
 import GameTopBar from './GameTopBar';
-import MineCount from './MineCount';
 import Board from './Board';
 import FlagButton from './FlagButton';
 import { generateBoard, revealTile, toggleTileFlag } from '../minesweeper';
