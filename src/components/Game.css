@@ -1,4 +1,5 @@
 .Game {
+  max-height: 100vh;
 }
 .Game .wrapper {
   padding: 10px;
